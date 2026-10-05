@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import type { Question } from '../types';
 import { questions } from '../data/questions';
-import { QuizHeader } from '../components/QuizHeader';
-import { ProgressBar } from '../components/ProgressBar';
 import { QuestionCard } from '../components/QuestionCard';
 
 export const QuizPage: React.FC = () => {
@@ -38,22 +36,22 @@ export const QuizPage: React.FC = () => {
   };
 
   return (
-    <div className="quiz-container">
-      <QuizHeader currentQuestion={currentIndex + 1} totalQuestions={questions.length} />
-      <ProgressBar current={currentIndex + 1} total={questions.length} />
-      <QuestionCard
-        question={currentQuestion}
-        selectedOption={selectedOption}
-        onSelectOption={handleSelectOption}
-      />
-      <div className="actions">
-        <button
-          className="btn submit-btn"
-          disabled={!selectedOption}
-          onClick={handleNext}
-        >
-          {currentIndex === questions.length - 1 ? 'Submit' : 'Next'}
-        </button>
+    <div className="quiz-page-container">
+      <div className="white-card">
+        <QuestionCard
+          question={currentQuestion}
+          selectedOption={selectedOption}
+          onSelectOption={handleSelectOption}
+        />
+        <div className="button-wrapper">
+          <button
+            className="submit-green-btn"
+            disabled={!selectedOption}
+            onClick={handleNext}
+          >
+            {currentIndex === questions.length - 1 ? 'Submit' : 'Next'}
+          </button>
+        </div>
       </div>
     </div>
   );
