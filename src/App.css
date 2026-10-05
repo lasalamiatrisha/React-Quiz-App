@@ -203,3 +203,61 @@ body {
   font-weight: 600;
   border-radius: 6px;
 }
+
+/* Result Details & Breakdown */
+.stats-container {
+  background-color: #1e293b;
+  border-radius: 8px;
+  padding: 16px 20px;
+  width: 100%;
+  max-width: 320px;
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.95rem;
+}
+
+.stat-label {
+  color: #94a3b8;
+}
+
+.stat-value {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.correct-text {
+  color: #22c55e;
+}
+
+.incorrect-text {
+  color: #ef4444;
+}
+
+.result-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.home-btn {
+  background-color: #334155;
+  color: #ffffff;
+  border: none;
+  padding: 10px 22px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.home-btn:hover {
+  background-color: #475569;
+}
