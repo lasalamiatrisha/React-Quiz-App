@@ -8,11 +8,15 @@ interface AnswerOptionProps {
 
 export const AnswerOption: React.FC<AnswerOptionProps> = ({ option, isSelected, onSelect }) => {
   return (
-    <button
-      className={`answer-option ${isSelected ? 'selected' : ''}`}
-      onClick={() => onSelect(option)}
-    >
-      {option}
-    </button>
+    <label className="radio-option">
+      <input
+        type="radio"
+        name="quiz-option"
+        value={option}
+        checked={isSelected}
+        onChange={() => onSelect(option)}
+      />
+      <span>{option}</span>
+    </label>
   );
 };
